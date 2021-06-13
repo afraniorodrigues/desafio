@@ -1,0 +1,10 @@
+version: "3.8"
+
+services:
+  rails:
+    build: .
+    container_name: agenda_rails
+    restart: always
+    network_mode: bridge
+    ports:
+      - 3000:3000
