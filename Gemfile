@@ -28,14 +28,13 @@ gem 'rack-cors'
 # Use Rack Attack from protect your Rails and Rack apps from bad clients
 gem 'rack-attack'
 
-# Devise is a flexible authentication solution for Rails 
+# Devise is a flexible authentication solution for Rails
 gem 'devise'
 gem 'devise-i18n'
 gem 'devise_token_auth'
 
 # USe to open excel file
-gem 'spreadsheet'
-gem "roo", "~> 2.8.0"
+gem 'roo', '~> 2.8.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

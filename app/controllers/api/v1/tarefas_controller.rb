@@ -4,8 +4,11 @@ class Api::V1::TarefasController < ApplicationController
 
   # GET /tarefas
   def index
-    @tarefas = Tarefa.all
-    render json: @tarefas
+    @tarefas = Tarefa.where(user: current_user)
+    respond_to do |format|
+      format.json { render json: @tarefas }
+      format.csv { send_data @tarefas.to_csv }
+    end
   end
 
   # GET /tarefas/1
@@ -41,7 +44,7 @@ class Api::V1::TarefasController < ApplicationController
 
   # Use callbacks to share common setup or constraints between actions.
   def set_tarefa
-    @tarefa = Tarefa.find(params[:id])
+    @tarefa = Tarefa.find(params[:id]).where(user: current_user)
   end
 
   # Only allow a list of trusted parameters through.

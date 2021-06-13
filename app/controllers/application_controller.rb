@@ -1,6 +1,10 @@
+# frozen_string_literal: true
+
+# ApplicationController
 class ApplicationController < ActionController::API
   before_action :configure_permitted_parameters, if: :devise_controller?
   include DeviseTokenAuth::Concerns::SetUserByToken
+  include ActionController::MimeResponds
 
   protected
 
