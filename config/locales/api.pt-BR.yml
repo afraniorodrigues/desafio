@@ -1,0 +1,6 @@
+pt-BR:
+  api:
+    validators:
+      mensagem:
+        cpf: Número de cpf inválido
+        telefone: Formato de telefone inválido
