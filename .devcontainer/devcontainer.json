@@ -29,7 +29,9 @@
 		"redvanworkshop.explorer-exclude-vscode-extension",
 		"rebornix.ruby",
 		"castwide.ruby-debug",
-		"misogi.ruby-rubocop"
+		"misogi.ruby-rubocop",
+		"donjayamanne.githistory",
+		"eamodio.gitlens"
 	]
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
