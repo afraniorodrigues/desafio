@@ -11,7 +11,7 @@
     ".gitattributes": true,
     ".gitignore": true,
     ".ruby-version": true,
-    "config.ru": false,
+    "config.ru": true,
     "Gemfile.lock": true,
     "Rakefile": true
   },
