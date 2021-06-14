@@ -4,6 +4,7 @@ services:
   rails:
     build: .
     container_name: agenda_rails
+    command: rails s -b 0.0.0.0
     restart: always
     network_mode: bridge
     ports:

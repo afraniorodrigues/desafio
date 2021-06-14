@@ -14,4 +14,6 @@ class Tarefa < ApplicationRecord
       end
     end
   end
+
+  
 end

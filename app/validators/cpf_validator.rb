@@ -9,6 +9,8 @@ class CpfValidator < ActiveModel::EachValidator
       message: options[:message] || 'is not valid',
       value: value
     )
+  rescue StandardError
+    false
   end
 
   private
@@ -37,6 +39,8 @@ class CpfValidator < ActiveModel::EachValidator
 
     cpf_numbers = cpf.chars.map(&:to_i)
     first_digit_valid?(cpf_numbers) && second_digit_valid?(cpf_numbers)
+  rescue Exception
+    false
   end
 
   def first_digit_valid?(cpf_numbers)
@@ -49,6 +53,8 @@ class CpfValidator < ActiveModel::EachValidator
 
     fst_verifier_digit = (11 - mod) > 9 ? 0 : (11 - mod)
     fst_verifier_digit == cpf_numbers[9]
+  rescue Exception
+    false
   end
 
   def second_digit_valid?(cpf_numbers)
@@ -61,5 +67,7 @@ class CpfValidator < ActiveModel::EachValidator
 
     snd_verifier_digit = 11 - mod > 9 ? 0 : mod
     snd_verifier_digit == cpf_numbers[10]
+  rescue Exception
+    false
   end
 end

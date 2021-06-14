@@ -13,4 +13,4 @@ RUN apk add --update --no-cache binutils-gold build-base curl file \
 COPY . /usr/src/app/
 
 # install ruby dependencies
-# RUN bundle install
+RUN bundle install

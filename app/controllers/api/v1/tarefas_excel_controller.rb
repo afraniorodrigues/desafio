@@ -20,5 +20,7 @@ class Api::V1::TarefasExcelController < ApplicationController
         user: current_user
       )
     end
+  rescue StandardError
+    head 400
   end
 end

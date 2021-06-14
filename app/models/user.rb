@@ -9,6 +9,6 @@ class User < ActiveRecord::Base
   include DeviseTokenAuth::Concerns::User
 
   has_many :tarefas, dependent: :destroy
-  validates :cpf, cpf: { message: I18n.t('api.validators.mensagem.cpf') }
-  validates :telefone, telefone: { message: I18n.t('api.validators.mensagem.telefone') }
+  validates :cpf, cpf: { message: I18n.t('api.validators.mensagem.cpf') }, presence: true
+  validates :telefone, telefone: { message: I18n.t('api.validators.mensagem.telefone') }, presence: true
 end
